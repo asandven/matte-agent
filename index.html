@@ -27,190 +27,40 @@
     justify-content: center;
     padding: 1rem;
   }
-  #app {
-    width: 100%;
-    max-width: 680px;
-  }
-  h1 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-  .subtitle {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
-
-  /* Setup panel */
-  #setup-panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  #setup-panel label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-muted);
-    display: block;
-    margin-bottom: 6px;
-    margin-top: 1rem;
-  }
+  #app { width: 100%; max-width: 680px; }
+  h1 { font-size: 22px; font-weight: 600; margin-bottom: 0.25rem; }
+  .subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; }
+  #setup-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+  #setup-panel label { font-size: 13px; font-weight: 500; color: var(--text-muted); display: block; margin-bottom: 6px; margin-top: 1rem; }
   #setup-panel label:first-of-type { margin-top: 0; }
-  #api-url-input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    background: var(--bg);
-    color: var(--text);
-    font-family: monospace;
-  }
-  #api-url-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
-  #tasks-input {
-    width: 100%;
-    min-height: 180px;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    background: var(--bg);
-    color: var(--text);
-    resize: vertical;
-    line-height: 1.6;
-    font-family: inherit;
-  }
+  #tasks-input { width: 100%; min-height: 180px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; background: var(--bg); color: var(--text); resize: vertical; line-height: 1.6; font-family: inherit; }
   #tasks-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
-  #start-btn {
-    margin-top: 1.25rem;
-    width: 100%;
-    padding: 12px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.15s;
-  }
+  #start-btn { margin-top: 1.25rem; width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-size: 15px; font-weight: 500; cursor: pointer; }
   #start-btn:hover { opacity: 0.9; }
-
-  /* Chat panel */
   #chat-panel { display: none; flex-direction: column; gap: 0.75rem; }
-  #chat-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-  }
+  #chat-header { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
   #chat-header h2 { font-size: 16px; font-weight: 600; }
   #chat-header p { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
-  #reset-btn {
-    font-size: 13px;
-    color: var(--text-muted);
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 6px 12px;
-    cursor: pointer;
-  }
+  #reset-btn { font-size: 13px; color: var(--text-muted); background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 12px; cursor: pointer; }
   #reset-btn:hover { background: var(--bg); color: var(--text); }
-
-  #messages {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem;
-    min-height: 360px;
-    max-height: 460px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    scroll-behavior: smooth;
-  }
+  #messages { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; min-height: 360px; max-height: 460px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; scroll-behavior: smooth; }
   .msg { display: flex; flex-direction: column; gap: 3px; max-width: 86%; }
   .msg.user { align-self: flex-end; align-items: flex-end; }
   .msg.bot { align-self: flex-start; }
   .msg-label { font-size: 11px; color: var(--text-muted); }
-  .msg-bubble {
-    padding: 10px 14px;
-    border-radius: 16px;
-    font-size: 14px;
-    line-height: 1.65;
-    white-space: pre-wrap;
-  }
-  .msg.user .msg-bubble {
-    background: var(--accent);
-    color: white;
-    border-bottom-right-radius: 4px;
-  }
-  .msg.bot .msg-bubble {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-bottom-left-radius: 4px;
-    color: var(--text);
-  }
+  .msg-bubble { padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.65; white-space: pre-wrap; }
+  .msg.user .msg-bubble { background: var(--accent); color: white; border-bottom-right-radius: 4px; }
+  .msg.bot .msg-bubble { background: var(--bg); border: 1px solid var(--border); border-bottom-left-radius: 4px; color: var(--text); }
   .msg.bot .msg-bubble.thinking { color: var(--text-muted); font-style: italic; }
-
-  .quick-btns {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .quick-btn {
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all 0.1s;
-  }
+  .quick-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .quick-btn { font-size: 12px; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); cursor: pointer; }
   .quick-btn:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
-
   #input-row { display: flex; gap: 8px; }
-  #user-input {
-    flex: 1;
-    padding: 11px 14px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    background: var(--surface);
-    color: var(--text);
-    font-family: inherit;
-  }
+  #user-input { flex: 1; padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; background: var(--surface); color: var(--text); font-family: inherit; }
   #user-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
-  #send-btn {
-    padding: 11px 20px;
-    border-radius: var(--radius-sm);
-    border: none;
-    background: var(--accent);
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-  }
+  #send-btn { padding: 11px 20px; border-radius: var(--radius-sm); border: none; background: var(--accent); color: white; font-size: 14px; font-weight: 500; cursor: pointer; }
   #send-btn:hover { opacity: 0.9; }
   #send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  .error-banner {
-    background: #fee;
-    border: 1px solid #fcc;
-    border-radius: var(--radius-sm);
-    padding: 10px 14px;
-    font-size: 13px;
-    color: #c00;
-    display: none;
-  }
 </style>
 </head>
 <body>
@@ -218,10 +68,6 @@
   <div id="setup-panel">
     <h1>📐 Matte-assistent</h1>
     <p class="subtitle">Tentamensøving – skriv svar eller be om hjelp</p>
-
-    <label for="api-url-input">URL til Pi-serveren din</label>
-    <input id="api-url-input" type="text" value="http://100.76.42.81:8780/chat" placeholder="http://100.x.x.x:8780/chat" />
-
     <label for="tasks-input">Lim inn tentamensoppgavene her</label>
     <textarea id="tasks-input" placeholder="Oppgave 1: ...&#10;Oppgave 2: ...">Oppgave 1: Regn ut 3/4 + 2/3. Skriv svaret som en brøk.
 
@@ -234,7 +80,6 @@ Oppgave 4: En rektangulær flate er 12 m lang og 7,5 m bred. Regn ut arealet.
 Oppgave 5: Skriv tallet 0,35 som a) brøk  b) prosent
 
 Oppgave 6: Finn stigningskoeffisienten til en linje som går gjennom punktene (2, 4) og (6, 12).</textarea>
-
     <button id="start-btn">Start øvingsøkt →</button>
   </div>
 
@@ -246,18 +91,13 @@ Oppgave 6: Finn stigningskoeffisienten til en linje som går gjennom punktene (2
       </div>
       <button id="reset-btn">← Tilbake</button>
     </div>
-
     <div id="messages"></div>
-
     <div class="quick-btns">
       <button class="quick-btn" onclick="quickSend('Kan du vise meg alle oppgavene?')">📋 Vis oppgavene</button>
       <button class="quick-btn" onclick="quickSend('Jeg trenger et hint')">💡 Hint</button>
       <button class="quick-btn" onclick="quickSend('Kan du forklare fremgangsmåten?')">📖 Fremgangsmåte</button>
       <button class="quick-btn" onclick="quickSend('Hva er svaret? Vis meg fasiten.')">✅ Vis fasit</button>
     </div>
-
-    <div class="error-banner" id="error-banner"></div>
-
     <div id="input-row">
       <input id="user-input" type="text" placeholder="Skriv svaret ditt eller still et spørsmål..." />
       <button id="send-btn">Send</button>
@@ -266,8 +106,8 @@ Oppgave 6: Finn stigningskoeffisienten til en linje som går gjennom punktene (2
 </div>
 
 <script>
+const API_KEY = "DIN-NOKKEL-HER";
 let tasks = '';
-let apiUrl = '';
 let history = [];
 
 function addMsg(role, text, thinking) {
@@ -287,23 +127,14 @@ function addMsg(role, text, thinking) {
   return bubble;
 }
 
-function showError(msg) {
-  const el = document.getElementById('error-banner');
-  el.textContent = msg;
-  el.style.display = 'block';
-  setTimeout(() => { el.style.display = 'none'; }, 6000);
-}
-
 async function sendMessage(userText) {
   if (!userText.trim()) return;
   const btn = document.getElementById('send-btn');
   const input = document.getElementById('user-input');
   btn.disabled = true;
   input.value = '';
-
   addMsg('user', userText);
   history.push({ role: 'user', content: userText });
-
   const bubble = addMsg('bot', 'Tenker…', true);
 
   const systemPrompt = `Du er en hjelpsom og tålmodig matematikk-assistent for elever på 8. trinn i Norge. Du hjelper elevene med å øve til tentamen.
@@ -323,21 +154,29 @@ Regler du ALLTID følger:
 7. Hold svarene korte og tydelige – maks 3–4 avsnitt.`;
 
   try {
-    const resp = await fetch(apiUrl, {
+    const resp = await fetch("https://api.anthropic.com/v1/messages", {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ system: systemPrompt, messages: history })
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': API_KEY,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-request-allow-browser': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: history
+      })
     });
-    if (!resp.ok) throw new Error('Server svarte med feil: ' + resp.status);
     const data = await resp.json();
     const reply = data.content?.find(b => b.type === 'text')?.text || 'Noe gikk galt.';
     bubble.textContent = reply;
     bubble.classList.remove('thinking');
     history.push({ role: 'assistant', content: reply });
   } catch(e) {
-    bubble.textContent = '⚠️ Kunne ikke koble til serveren. Sjekk at Pi-en kjører og at URL-en er riktig.';
+    bubble.textContent = '⚠️ Kunne ikke koble til. Prøv igjen.';
     bubble.classList.remove('thinking');
-    showError('Feil: ' + e.message);
     history.pop();
   }
   btn.disabled = false;
@@ -348,8 +187,7 @@ function quickSend(text) { sendMessage(text); }
 
 document.getElementById('start-btn').addEventListener('click', () => {
   tasks = document.getElementById('tasks-input').value.trim();
-  apiUrl = document.getElementById('api-url-input').value.trim();
-  if (!tasks || !apiUrl) { alert('Fyll inn både server-URL og oppgavene.'); return; }
+  if (!tasks) { alert('Lim inn oppgavene først.'); return; }
   document.getElementById('setup-panel').style.display = 'none';
   const chat = document.getElementById('chat-panel');
   chat.style.display = 'flex';
@@ -364,9 +202,7 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   history = [];
 });
 
-document.getElementById('send-btn').addEventListener('click', () => {
-  sendMessage(document.getElementById('user-input').value);
-});
+document.getElementById('send-btn').addEventListener('click', () => sendMessage(document.getElementById('user-input').value));
 document.getElementById('user-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') { e.preventDefault(); sendMessage(e.target.value); }
 });
