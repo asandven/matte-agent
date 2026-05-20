@@ -106,8 +106,7 @@ Oppgave 6: Finn stigningskoeffisienten til en linje som går gjennom punktene (2
 </div>
 
 <script>
-const API_KEY = "api03-e_kS79LL_Rl_JfN7vy56v08c22gYKdMLRkyK8hKgO29hRl-BAfflFjGTfv-Rhz8E5y0yHb0VauCqOeCjP8yRqQ-AYQroAAA"
-;
+const API_KEY = "api03-e_kS79LL_Rl_JfN7vy56v08c22gYKdMLRkyK8hKgO29hRl-BAfflFjGTfv-Rhz8E5y0yHb0VauCqOeCjP8yRqQ-AYQroAAA";
 let tasks = '';
 let history = [];
 
@@ -155,13 +154,10 @@ Regler du ALLTID følger:
 7. Hold svarene korte og tydelige – maks 3–4 avsnitt.`;
 
   try {
-    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    const resp = await fetch("https://raspberrypi.tail063df7.ts.net/chat", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-request-allow-browser': 'true'
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
