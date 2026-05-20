@@ -308,7 +308,7 @@ const chapters = [
     short: "Regneregel",
     content: `<h3>Huskeregel</h3>
 <ul>
-<li>Parenteser først</li>
+<li>Regn ut parenteser først</li>
 <li>Potenser</li>
 <li>Ganging og deling</li>
 <li>Addisjon og subtraksjon</li>
@@ -340,11 +340,13 @@ const chapters = [
 <span class="difficulty-badge middels">Middels</span>
 <p><b>Finn:</b></p><ul><li>15 % av 200</li><li>30 % av 450</li><li>12 % av 150</li></ul>
 <p><b>Hvor mange prosent er:</b></p><ul><li>18 av 60</li><li>45 av 90</li><li>16 av 80</li></ul>
-<p>En bukse koster 600 kr. Det er 20 % rabatt. Hvor stor er rabatten? Hva blir ny pris?</p>
+<ul><li>En bukse koster 600 kr. Det er 20 % rabatt. Hvor stor er rabatten? Hva blir ny pris?</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
-<p>En mobil kostet 4000 kr. Prisen økte med 15 %. Hvor mye økte prisen? Hva er ny pris?</p>
-<p>På en skole er 84 av 120 elever med på fotball. Hvor mange prosent er det?</p>
-<p>En vare koster 1200 kr etter 25 % rabatt. Hva kostet varen før rabatt?</p>`
+<ul>
+<li>En mobil kostet 4000 kr. Prisen økte med 15 %. Hvor mye økte prisen? Hva er ny pris?</li>
+<li>På en skole er 84 av 120 elever med på fotball. Hvor mange prosent er det?</li>
+<li>En vare koster 1200 kr etter 25 % rabatt. Hva kostet varen før rabatt?</li>
+</ul>`
   },
   {
     title: "3. Funksjoner",
@@ -352,18 +354,20 @@ const chapters = [
     content: `<h3>Finne funksjonsuttrykk fra graf</h3>
 <span class="difficulty-badge lav">Lav</span>
 <p><b>Finn funksjonsuttrykket når:</b></p>
-<ul><li>Grafen går gjennom (0, 2) og stiger med 1</li><li>Grafen går gjennom (0, 5) og stiger med 3</li></ul>
+<ul><li>Grafen går gjennom (0, 2) og stiger med 1.</li><li>Grafen går gjennom (0, 5) og stiger med 3.</li></ul>
 <p><b>Tegn grafene til:</b></p><ul><li>y = x + 2</li><li>y = 2x</li></ul>
 <span class="difficulty-badge middels">Middels</span>
 <p><b>Finn funksjonsuttrykket til en graf som:</b></p>
 <ul><li>skjærer y-aksen i 4 og har stigningstall 2</li><li>skjærer y-aksen i −1 og har stigningstall 5</li></ul>
 <p><b>Lag verditabell for:</b></p><ul><li>y = 3x + 1</li><li>y = −2x + 4</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
-<p>En taxi tar 70 kr i startpris og 15 kr per km. Lag funksjonsuttrykk. Finn prisen etter 8 km. Tegn grafen.</p>
-<p>Et lys brenner ned 2 cm/time. Høyden var 30 cm fra start. Lag funksjonsuttrykk. Hvor høyt er lyset etter 5 timer?</p>
+<ul>
+<li>En taxi tar 70 kr i startpris og 15 kr per kilometer. Lag funksjonsuttrykk, finn prisen etter 8 km og tegn grafen.</li>
+<li>Et lys brenner ned 2 cm hver time. Høyden var 30 cm fra start. Lag funksjonsuttrykk. Hvor høyt er lyset etter 5 timer?</li>
+</ul>
 <h4>GeoGebra-oppgaver</h4>
 <p><b>Tegn grafen til:</b></p><ul><li>y = 2x + 3</li><li>y = −x + 4</li><li>y = 0,5x − 2</li></ul>
-<p><b>Utforsk:</b> Hva skjer når stigningstallet øker? Hva skjer når konstantleddet endres?</p>`
+<p><b>Utforsk:</b></p><ul><li>Hva skjer når stigningstallet øker?</li><li>Hva skjer når konstantleddet endres?</li></ul>`
   },
   {
     title: "4. Scratch",
@@ -372,13 +376,13 @@ const chapters = [
 <span class="difficulty-badge lav">Lav</span>
 <p><b>Forklar hva disse blokkene gjør:</b></p>
 <ul><li>«gå 10 steg»</li><li>«si Hei!»</li><li>«vent 1 sekund»</li></ul>
-<p>Lag et program der en figur går framover, sier navnet ditt og snur seg.</p>
+<ul><li>Lag et program der en figur går framover, sier navnet ditt og snur seg.</li></ul>
 <span class="difficulty-badge middels">Middels</span>
-<p>Lag et program der en figur beveger seg i en firkant, skifter farge og spiller lyd.</p>
-<p>Hva gjør en løkke? Hva er forskjellen på «for alltid» og «gjenta 10 ganger»?</p>
+<ul><li>Lag et program der en figur beveger seg i en firkant, skifter farge og spiller lyd.</li>
+<li>Hva gjør en løkke? Hva er forskjellen på «for alltid» og «gjenta 10 ganger»?</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
-<p>Lag et spill der figuren styres med piltastene, poeng øker når du treffer et objekt, og spillet stopper etter 30 sekunder.</p>
-<p>Forklar hvordan variabler brukes i Scratch.</p>`
+<ul><li>Lag et spill der figuren styres med piltastene, poeng øker når du treffer et objekt, og spillet stopper etter 30 sekunder.</li>
+<li>Forklar hvordan variabler brukes i Scratch.</li></ul>`
   },
   {
     title: "5. Algebra",
@@ -391,14 +395,22 @@ const chapters = [
 <p><b>Sett inn verdi:</b></p><ul><li>x = 4 i 2x + 5</li><li>y = 3 i 4y − 7</li><li>a = 2 i 3a + 8</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
 <p><b>Trekk sammen:</b></p><ul><li>5x + 2y − 3x + y</li><li>8a − 2b + 3a + 4b</li></ul>
-<p><b>Sett inn:</b></p><ul><li>x = 2 og y = 5 i 3x + 2y</li><li>a = 4 og b = 1 i 2a − 3b</li></ul>
+<p><b>Sett inn verdi:</b></p><ul><li>x = 2 og y = 5 i 3x + 2y</li><li>a = 4 og b = 1 i 2a − 3b</li></ul>
 <h3>Forkorte algebraiske brøker</h3>
 <span class="difficulty-badge lav">Lav</span>
 <p><b>Forkort:</b></p><ul><li>2x/4</li><li>6a/3</li><li>10y/5</li></ul>
 <span class="difficulty-badge middels">Middels</span>
 <p><b>Forkort:</b></p><ul><li>4x/8</li><li>9a/3a</li><li>12y/6</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
-<p><b>Forkort:</b></p><ul><li>(6x + 6)/6</li><li>12ab/4a</li><li>15x²/5x</li></ul>`
+<p><b>Forkort:</b></p><ul><li>(6x + 6)/6</li><li>12ab/4a</li><li>15x²/5x</li></ul>
+<h3>Figurtall</h3>
+<span class="difficulty-badge lav">Lav</span>
+<ul><li>Finn neste figur: 2, 4, 6, 8, __</li><li>Finn neste figur: 3, 6, 9, 12, __</li></ul>
+<span class="difficulty-badge middels">Middels</span>
+<ul><li>Finn neste tall: 1, 4, 7, 10, __</li><li>Finn neste tall: 5, 10, 15, 20, __</li></ul>
+<span class="difficulty-badge hoy">Høy</span>
+<ul><li>Et figurmønster øker med 4 hver gang og starter på 3. Skriv de fem første tallene og lag en formel.</li>
+<li>Finn formel til tallrekken: 2, 5, 8, 11, …</li></ul>`
   },
   {
     title: "6. Potenser",
@@ -420,60 +432,61 @@ const chapters = [
     short: "Tallrekker",
     content: `<h3>Tallrekker</h3>
 <span class="difficulty-badge lav">Lav</span>
-<p><b>Finn neste tall:</b></p><ul><li>2, 4, 6, 8, __</li><li>10, 20, 30, __</li></ul>
+<ul><li>Finn neste tall: 2, 4, 6, 8, __</li><li>Finn neste tall: 10, 20, 30, __</li></ul>
 <span class="difficulty-badge middels">Middels</span>
-<p><b>Finn neste tall:</b></p><ul><li>3, 6, 12, 24, __</li><li>1, 4, 9, 16, __</li></ul>
-<p>Forklar mønsteret.</p>
+<ul><li>Finn neste tall: 3, 6, 12, 24, __</li><li>Finn neste tall: 1, 4, 9, 16, __</li></ul>
 <span class="difficulty-badge hoy">Høy</span>
-<p><b>Finn de to neste tallene:</b></p>
-<ul><li>2, 5, 10, 17, 26, __, __</li><li>1, 1, 2, 3, 5, 8, __, __</li></ul>
-<p>Lag din egen tallrekke og forklar regelen.</p>`
+<ul><li>Finn de to neste tallene: 2, 5, 10, 17, 26, __, __</li>
+<li>Finn de to neste tallene: 1, 1, 2, 3, 5, 8, __, __</li>
+<li>Lag din egen tallrekke og forklar regelen.</li></ul>`
   },
   {
     title: "8. Likninger",
     short: "Likninger",
     content: `<h3>Løse likninger</h3>
 <span class="difficulty-badge lav">Lav</span>
-<p><b>Løs likningen:</b></p><ul><li>x + 4 = 10</li><li>y − 3 = 8</li><li>2a = 12</li></ul>
+<ul><li>x + 4 = 10</li><li>y − 3 = 8</li><li>2a = 12</li></ul>
 <p>Sett prøve på svaret.</p>
 <span class="difficulty-badge middels">Middels</span>
-<p><b>Løs likningen:</b></p><ul><li>3x + 2 = 14</li><li>5y − 7 = 18</li><li>4a + 8 = 20</li></ul>
+<ul><li>3x + 2 = 14</li><li>5y − 7 = 18</li><li>4a + 8 = 20</li></ul>
 <p>Sett prøve på svaret.</p>
 <span class="difficulty-badge hoy">Høy</span>
-<p><b>Løs likningen:</b></p><ul><li>4x − 7 = 21</li><li>3(x + 2) = 18</li><li>5a − 2 = 3a + 10</li></ul>
-<p>En kino tar 120 kr per billett. Du har 600 kr. Sett opp en likning og finn hvor mange billetter du kan kjøpe.</p>
+<ul><li>4x − 7 = 21</li><li>3(x + 2) = 18</li><li>5a − 2 = 3a + 10</li>
+<li>En kino tar 120 kr per billett. Du har 600 kr. Sett opp en likning. Hvor mange billetter kan du kjøpe?</li></ul>
 <p>Sett prøve på alle svarene.</p>`
   }
 ];
 
 const fullTasksText = `Arbeidshefte i matematikk – 8. trinn, Presterød Ungdomsskole.
 
-Kapitler: Regnerekkefølge, Prosent, Funksjoner, Programmering i Scratch, Algebra, Potenser/standardform/kvadratrot, Tallrekker, Likninger.
-
 1. REGNEREKKEFØLGE: Huskeregel: parenteser, potenser, gange/dele, addere/subtrahere.
 Lav: 4+3·2, 12−5·2, 20:4+7, 6+8:2, (4+2)·3, 18:(3+3), (10−6)·5, 24:(2·3)
 Middels: 5+2·6−3, 18:3+4·2, (7+5)·2−8, 30−4·(5−2), 16:2·4, 40−6·3+8, (15−5):2+7, 3·(8−2)+5
-H�y: 24−3·(4+2), 5·(8−3)+12:4, 48:(6−2)+7·3, (20−8):4+6·2, lag uttrykk som gir 18/25/40 med minst tre regnearter.
+Høy: 24−3·(4+2), 5·(8−3)+12:4, 48:(6−2)+7·3, (20−8):4+6·2. Lag uttrykk som gir 18/25/40 med minst tre regnearter.
 
-2. PROSENT: Lav: 10% av 50/120/300, 25% av 40/80/200, prosent av 5/10, 3/12, 15/20.
-Middels: 15% av 200, 30% av 450, 12% av 150. Prosent: 18 av 60, 45 av 90, 16 av 80. Bukse 600 kr, 20% rabatt.
-H�y: Mobil 4000 kr +15%, 84/120 elever på fotball, vare 1200 kr etter 25% rabatt – finn opprinnelig pris.
+2. PROSENT:
+Lav: 10% av 50/120/300, 25% av 40/80/200, prosent av 5/10, 3/12, 15/20.
+Middels: 15% av 200, 30% av 450, 12% av 150. Prosent: 18 av 60, 45 av 90, 16 av 80. En bukse koster 600 kr med 20% rabatt – finn rabatt og ny pris.
+Høy: Mobil 4000 kr +15% (finn økning og ny pris), 84/120 elever på fotball (finn prosent), vare 1200 kr etter 25% rabatt (finn opprinnelig pris).
 
-3. FUNKSJONER: Lav: funksjonsuttrykk fra grafbeskrivelse, tegn y=x+2 og y=2x.
+3. FUNKSJONER:
+Lav: finn funksjonsuttrykk fra grafbeskrivelse, tegn y=x+2 og y=2x.
 Middels: funksjonsuttrykk fra stigningstall og y-skjæring, verditabell for y=3x+1 og y=−2x+4.
-H�y: taxi 70 kr startpris + 15 kr/km, lys 30 cm starter − 2 cm/time.
+Høy: En taxi tar 70 kr i startpris og 15 kr per kilometer – lag funksjonsuttrykk, finn prisen etter 8 km og tegn grafen. Et lys brenner ned 2 cm/time fra 30 cm – lag funksjonsuttrykk og finn høyde etter 5 timer.
 GeoGebra: tegn y=2x+3, y=−x+4, y=0,5x−2. Utforsk stigningstall og konstantledd.
 
-4. SCRATCH: Lav: forklar blokker, lag enkelt program. Middels: firkantbevegelse, løkker. Høy: spill med piltaster, poeng og tidsbegrensning.
+4. SCRATCH: Lav: forklar blokker, lag enkelt program. Middels: firkantbevegelse, løkker. Høy: spill med piltaster, poeng og tidsbegrensning, variabler.
 
-5. ALGEBRA: Trekk sammen uttrykk, sett inn verdier, forkort algebraiske brøker.
-Lav: 2x+3x, 5a−2a, 4y+y osv. Middels: mer komplekse. Høy: to variabler, forkort (6x+6)/6, 12ab/4a, 15x²/5x.
+5. ALGEBRA:
+Trekke sammen: 2x+3x, 5a−2a, 4y+y, 7m−3m, 10k+2k (lav). 3x+4x−2x, 5a+2−3a, 8y−2y+6, sett inn x=4/y=3/a=2 (middels). To variabler, sett inn x=2 og y=5 (høy).
+Forkorte brøker: 2x/4, 6a/3, 10y/5 (lav). 4x/8, 9a/3a, 12y/6 (middels). (6x+6)/6, 12ab/4a, 15x²/5x (høy).
+Figurtall: aritmetiske rekker (lav/middels). Figurmønster +4 fra 3, formel for 2,5,8,11 (høy).
 
-6. POTENSER: Lav: 2², 5², 10², √16, √25, √49. Middels: 3³, 2⁴, 5³, standardform. Høy: 2³·2², 10⁴:10², standardform og tilbake.
+6. POTENSER: Lav: 2², 5², 10², √16, √25, √49. Middels: 3³, 2⁴, 5³, standardform. Høy: 2³·2², 10⁴:10², standardform og tilbake, √144, √196.
 
-7. TALLREKKER: Lav: aritmetiske rekker. Middels: geometriske, kvadrattall. Høy: 2,5,10,17,26 (øker med 3,5,7,9...) og Fibonacci.
+7. TALLREKKER: Lav: 2,4,6,8 og 10,20,30. Middels: geometrisk 3,6,12,24 og kvadrattall 1,4,9,16. Høy: 2,5,10,17,26 (øker med 3,5,7,9...) og Fibonacci 1,1,2,3,5,8.
 
-8. LIKNINGER: Lav: x+4=10, y−3=8, 2a=12. Middels: 3x+2=14, 5y−7=18, 4a+8=20. Høy: 4x−7=21, 3(x+2)=18, 5a−2=3a+10, kinobilletter.`;
+8. LIKNINGER: Lav: x+4=10, y−3=8, 2a=12. Middels: 3x+2=14, 5y−7=18, 4a+8=20. Høy: 4x−7=21, 3(x+2)=18, 5a−2=3a+10, kino 120 kr/billett med 600 kr (sett opp likning). Sett alltid prøve.`;
 
 function buildTabs() {
   const tabs = document.getElementById('chapter-tabs');
