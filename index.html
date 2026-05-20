@@ -494,10 +494,51 @@ function selectChapter(i) {
 }
 
 function makeTasksClickable() {
+  // Keywords that indicate rules/instructions, not tasks
+  const skipPatterns = [
+    /^regn ut parenteser/i,
+    /^potenser$/i,
+    /^ganging og deling/i,
+    /^addisjon og subtraksjon/i,
+    /^går framover/i,
+    /^sier navnet/i,
+    /^snur seg/i,
+    /^beveger seg/i,
+    /^skifter farge/i,
+    /^spiller lyd/i,
+    /^figuren styres/i,
+    /^poeng øker/i,
+    /^spillet stopper/i,
+    /^for alltid/i,
+    /^gjenta \d+/i,
+    /^lag funksjonsuttrykk\.$/i,
+    /^finn prisen etter/i,
+    /^tegn grafen\.$/i,
+    /^lag funksjonsuttrykk\.$/i,
+    /^hvor høyt er/i,
+    /^hva skjer når/i,
+    /^skriv de fem/i,
+    /^lag en formel\.$/i,
+    /^sett prøve på svaret\.$/i,
+    /^sett prøve på alle/i,
+    /^sett opp en likning\.$/i,
+    /^hvor mange billetter/i,
+    /^hvor stor er rabatten/i,
+    /^hva blir ny pris/i,
+    /^hvor mye økte/i,
+    /^hva er ny pris/i,
+    /^lag funksjonsuttrykk/i,
+    /^«.+»$/,           // Scratch blocks in guillemets
+    /^forklar mønsteret\.$/i,
+    /^du må bruke/i,
+  ];
+
   const items = document.querySelectorAll('.tasks-content li');
   items.forEach(li => {
     const text = li.textContent.trim();
-    if (text.length > 3) {
+    // Must be longer than 3 chars and not match any skip pattern
+    const skip = text.length <= 3 || skipPatterns.some(p => p.test(text));
+    if (!skip) {
       li.classList.add('clickable-task');
       li.addEventListener('click', () => selectTask(li, text));
     }
