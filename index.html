@@ -126,6 +126,38 @@ header {
 .tasks-content h4 { font-size: 12px; font-weight: 600; margin: 10px 0 4px; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.5px; }
 .tasks-content ul { padding-left: 18px; margin: 4px 0; }
 .tasks-content li { margin: 3px 0; }
+.tasks-content li.clickable-task {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin: 4px 0;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  list-style: none;
+  margin-left: -18px;
+  padding-left: 26px;
+  position: relative;
+}
+.tasks-content li.clickable-task::before {
+  content: "▶";
+  position: absolute;
+  left: 8px;
+  font-size: 9px;
+  color: #9ca3af;
+  top: 7px;
+}
+.tasks-content li.clickable-task:hover {
+  background: #f9f0f1;
+  border-color: #6B1A2A;
+  color: #6B1A2A;
+}
+.tasks-content li.clickable-task:hover::before { color: #6B1A2A; }
+.tasks-content li.clickable-task.selected {
+  background: #6B1A2A;
+  color: white;
+  border-color: #6B1A2A;
+}
+.tasks-content li.clickable-task.selected::before { color: white; }
 .tasks-content p { margin: 4px 0; }
 .difficulty-badge {
   display: inline-block;
@@ -458,6 +490,29 @@ function selectChapter(i) {
   currentChapter = i;
   document.querySelectorAll('.tab').forEach((t, j) => t.classList.toggle('active', j === i));
   document.getElementById('tasks-content').innerHTML = chapters[i].content;
+  makeTasksClickable();
+}
+
+function makeTasksClickable() {
+  const items = document.querySelectorAll('.tasks-content li');
+  items.forEach(li => {
+    const text = li.textContent.trim();
+    if (text.length > 3) {
+      li.classList.add('clickable-task');
+      li.addEventListener('click', () => selectTask(li, text));
+    }
+  });
+}
+
+function selectTask(li, taskText) {
+  // Deselect previous
+  document.querySelectorAll('.clickable-task.selected').forEach(el => el.classList.remove('selected'));
+  li.classList.add('selected');
+
+  const chapterTitle = chapters[currentChapter].title;
+  const prompt = `Jeg vil jobbe med denne oppgaven fra ${chapterTitle}:
+"${taskText}"`;
+  sendMessage(prompt);
 }
 
 function addMsg(role, text, thinking) {
@@ -488,6 +543,8 @@ async function sendMessage(userText) {
   const bubble = addMsg('bot', 'Tenker…', true);
 
   const currentChapterTitle = chapters[currentChapter].title;
+  const selectedTask = document.querySelector('.clickable-task.selected');
+  const selectedTaskText = selectedTask ? selectedTask.textContent.trim() : null;
   const systemPrompt = `Du er en hjelpsom og tålmodig matematikk-assistent for elever på 8. trinn ved Presterød Ungdomsskole (PUS). Du hjelper elevene med å øve til tentamen.
 
 Her er alt innholdet i arbeidsheftet:
@@ -495,7 +552,7 @@ Her er alt innholdet i arbeidsheftet:
 ${fullTasksText}
 ---
 
-Eleven ser nå på: ${currentChapterTitle}
+Eleven ser nå på: ${currentChapterTitle}${selectedTaskText ? "\nValgt oppgave: " + selectedTaskText : ""}
 
 Regler du ALLTID følger:
 1. Gi IKKE svaret direkte. Hjelp eleven å tenke selv med hint og ledende spørsmål.
