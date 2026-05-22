@@ -671,10 +671,12 @@ Viktig:
     const reply = rawReply.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
     bubble.textContent = reply;
     bubble.classList.remove('thinking');
+    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.push({ role: 'assistant', content: reply });
   } catch(e) {
     bubble.textContent = '⚠️ Kunne ikke koble til. Prøv igjen.';
     bubble.classList.remove('thinking');
+    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.pop();
   }
   btn.disabled = false;
