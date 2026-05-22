@@ -110,11 +110,6 @@ const API_KEY = "api03-e_kS79LL_Rl_JfN7vy56v08c22gYKdMLRkyK8hKgO29hRl-BAfflFjGTf
 let tasks = '';
 let history = [];
 
-function scrollToBottom() {
-  const msgs = document.getElementById('messages');
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
 function addMsg(role, text, thinking) {
   const msgs = document.getElementById('messages');
   const div = document.createElement('div');
@@ -128,7 +123,7 @@ function addMsg(role, text, thinking) {
   div.appendChild(label);
   div.appendChild(bubble);
   msgs.appendChild(div);
-  scrollToBottom();
+  msgs.scrollTop = msgs.scrollHeight;
   return bubble;
 }
 
@@ -175,12 +170,12 @@ Regler du ALLTID følger:
     const reply = data.content?.find(b => b.type === 'text')?.text || 'Noe gikk galt.';
     bubble.textContent = reply;
     bubble.classList.remove('thinking');
-    scrollToBottom();
+    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.push({ role: 'assistant', content: reply });
   } catch(e) {
     bubble.textContent = '⚠️ Kunne ikke koble til. Prøv igjen.';
     bubble.classList.remove('thinking');
-    scrollToBottom();
+    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.pop();
   }
   btn.disabled = false;
