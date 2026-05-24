@@ -660,10 +660,20 @@ Viktig:
 - Fasiten for denne oppgaven: regn den ut steg for steg i hodet ditt før du svarer eleven.`;
 
   try {
+    const trimmedHistory = history.slice(-10);
     const resp = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ system: systemPrompt, messages: history })
+      body: JSON.stringify({
+        system: [
+          {
+            type: 'text',
+            text: systemPrompt,
+            cache_control: { type: 'ephemeral' }
+          }
+        ],
+        messages: trimmedHistory
+      })
     });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const data = await resp.json();
@@ -671,12 +681,10 @@ Viktig:
     const reply = rawReply.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
     bubble.textContent = reply;
     bubble.classList.remove('thinking');
-    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.push({ role: 'assistant', content: reply });
   } catch(e) {
     bubble.textContent = '⚠️ Kunne ikke koble til. Prøv igjen.';
     bubble.classList.remove('thinking');
-    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
     history.pop();
   }
   btn.disabled = false;
